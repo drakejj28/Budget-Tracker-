@@ -1,0 +1,91 @@
+$primary-color: #123524;
+$secondary-color: #A9A9A9;
+$light-color: #F5F5DC;
+
+// defines gradient mixin
+@mixin gradient($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2); // Change direction to 'to right'
+}
+
+// use gradient mixin for body background
+body {
+  @include gradient(#F5F5DC, #FFFFFF);
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1 {
+  font-size: 8rem;
+  text-align: center;
+  color: $primary-color;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) { // for tablet
+    width: 95%;
+  }
+
+  @media (max-width: 480px) { // for mobile
+    width: 100%;
+  }
+}
+
+.section {
+  background-color: $primary-color;
+  color: $light-color;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 4rem;
+}
+
+.input {
+  display: block;
+  width: 98%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: $light-color;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 2rem;
+
+  @media (max-width: 480px) { // for mobile
+    font-size: 1.5rem;
+  }
+}
+
+.button.reset {
+  background-color: $primary-color;
+  font-size: 2rem;
+}
+
+.total {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+
+

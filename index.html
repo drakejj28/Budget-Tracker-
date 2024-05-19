@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <h1>BUDGET TRACKER</h1>
+    
+        <!-- input fields for income -->
+        <div id="income" class="section">
+          <h2 class="section-title">Add Income :</h2>
+          <input type="text" id="income-description" placeholder="Income Description" class="input">
+          <input type="number" id="income-amount" placeholder="Income Amount" class="input">
+          <button onclick="budget.addIncome(document.getElementById('income-description').value, parseFloat(document.getElementById('income-amount').value))" class="button">ADD INCOME</button>
+          <h2 class="section-title">Total Income :</h2>
+          <p id="total-income" class="total"></p>
+        </div>
+    
+        <!-- input fields for expenses -->
+        <div id="expenses" class="section">
+          <h2 class="section-title">Add Expense :</h2>
+          <input type="text" id="expense-description" placeholder="Expense Description" class="input">
+          <input type="number" id="expense-amount" placeholder="Expense Amount" class="input">
+          <button onclick="budget.addExpense(document.getElementById('expense-description').value, parseFloat(document.getElementById('expense-amount').value))" class="button">ADD INCOME</button>
+          <h2 class="section-title">Total Expenses :</h2>
+          <p id="total-expenses" class="total"></p>
+        </div>
+    
+        <!-- display total budget -->
+        <div id="budget" class="section">
+          <h2 class="section-title">Total Budget :</h2>
+          <p id="total-budget" class="total"></p>
+        </div>
+    
+        <!-- button to refresh the content -->
+        <button onclick="budget.reset()" class="button reset">REFRESH</button>
+      </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
